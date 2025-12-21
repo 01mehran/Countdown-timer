@@ -5,3 +5,9 @@
     @apply font-sans;
   }
 }
+
+@layer components {
+  .timeBox {
+    @apply flex items-center flex-col space-y-0.5 min-w-1/3 sm:min-w-auto;
+  }
+}
