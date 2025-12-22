@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
+import TimeUnit from "./components/TimeUnit";
 
 type TTimeLeft = {
   months: number;
@@ -48,26 +49,11 @@ export default function Home() {
       <Header />
 
       <div className="flex items-center justify-evenly w-full flex-wrap space-y-3 sm:space-y-0">
-        <article className="timeBox">
-          <time className="text-6xl font-bold">{timeLeft.months}</time>
-          <span className="text-[12px] font-medium">months</span>
-        </article>
-        <article className="timeBox">
-          <time className="text-6xl font-bold">{timeLeft.days}</time>
-          <span className="text-[12px] font-medium">days</span>
-        </article>
-        <article className="timeBox">
-          <time className="text-6xl font-bold">{timeLeft.hours}</time>
-          <span className="text-[12px] font-medium">hours</span>
-        </article>
-        <article className="timeBox">
-          <time className="text-6xl font-bold">{timeLeft.minutes}</time>
-          <span className="text-[12px] font-medium">minutes</span>
-        </article>
-        <article className="timeBox">
-          <time className="text-6xl font-bold">{timeLeft.seconds}</time>
-          <span className="text-[12px] font-medium">seconds</span>
-        </article>
+        <TimeUnit timeUnitLeft={timeLeft.months} timeUnitName="months" />
+        <TimeUnit timeUnitLeft={timeLeft.days} timeUnitName="days" />
+        <TimeUnit timeUnitLeft={timeLeft.hours} timeUnitName="hours" />
+        <TimeUnit timeUnitLeft={timeLeft.minutes} timeUnitName="minutes" />
+        <TimeUnit timeUnitLeft={timeLeft.seconds} timeUnitName="seconds" />
       </div>
     </div>
   );
