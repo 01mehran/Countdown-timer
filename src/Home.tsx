@@ -28,14 +28,37 @@ export default function Home() {
       // Next New Year date;
       const newYearDate = new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0);
 
+      if (now >= newYearDate) {
+        clearInterval(interval);
+        setTimeLeft({
+          months: 0,
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+        });
+        return;
+      }
+
+      let months =
+        (newYearDate.getFullYear() - now.getFullYear()) * 12 +
+        (newYearDate.getMonth() - now.getMonth());
+
+      const tempDate = new Date(now);
+      tempDate.setMonth(tempDate.getMonth() + months);
+
+      if (tempDate > newYearDate) {
+        months--;
+        tempDate.setMonth(tempDate.getMonth() - 1);
+      }
+
       // Milliseconds remaining until next New Yearک
-      const diff = newYearDate.getTime() - now.getTime();
+      const diff = newYearDate.getTime() - tempDate.getTime();
 
       const seconds = Math.floor(diff / 1000) % 60;
       const minutes = Math.floor(diff / (1000 * 60)) % 60;
-      const hours = Math.floor(diff / (1000 * 60 * 60 * 24)) % 24;
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 30;
-      const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
+      const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
       setTimeLeft({ months, days, hours, minutes, seconds });
     }, 1000);
