@@ -10,7 +10,7 @@ type TTimeLeft = {
   seconds: number;
 };
 
-export default function Home() {
+export default function Timer() {
   // states;
   const [timeLeft, setTimeLeft] = useState<TTimeLeft>({
     months: 0,

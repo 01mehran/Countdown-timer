@@ -1,7 +1,7 @@
-import Home from "./Home";
+import Timer from "./Timer";
 
 function App() {
-  return <Home />;
+  return <Timer />;
 }
 
 export default App;
