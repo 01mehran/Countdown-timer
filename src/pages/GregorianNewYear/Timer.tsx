@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 
 // Components;
-import NewYearTimeMsg from "./components/NewYearTimeMsg";
-import NewYearTimeUnits from "./components/NewYearTimeUnits";
+import NewYearTimeMsg from "../../components/GregorianNewYear/NewYearTimeMsg";
+import NewYearTimeUnits from "../../components/GregorianNewYear/NewYearTimeUnits";
 
 // Types;
 export type TTimeLeft = {

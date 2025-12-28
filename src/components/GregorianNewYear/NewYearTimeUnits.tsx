@@ -1,5 +1,5 @@
 // Types;
-import type { TTimeLeft } from "../Timer";
+import type { TTimeLeft } from "../../pages/GregorianNewYear/Timer";
 
 // Componenets;
 import Header from "./Header";

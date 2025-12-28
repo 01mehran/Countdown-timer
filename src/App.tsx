@@ -1,4 +1,4 @@
-import Timer from "./Timer";
+import Timer from "./pages/GregorianNewYear/Timer";
 
 function App() {
   return <Timer />;
