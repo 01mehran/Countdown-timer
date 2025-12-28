@@ -1,7 +1,12 @@
+// Hooks;
 import { useEffect, useState } from "react";
+
+// Components;
 import Header from "./components/Header";
 import TimeUnit from "./components/TimeUnit";
+import NewYearTimeMsg from "./components/NewYearTimeMsg";
 
+// Types;
 type TTimeLeft = {
   months: number;
   days: number;
@@ -19,26 +24,30 @@ export default function Timer() {
     minutes: 0,
     seconds: 0,
   });
+  const [isNewYearTime, setIsNewYearTime] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       // Current time;
       const now = new Date();
 
+      // Check New Year day;
+      const isNewYear =
+        now.getMonth() === 0 &&
+        now.getDate() === 1 &&
+        now.getHours() === 0 &&
+        now.getMinutes() === 0 &&
+        now.getSeconds() === 0;
+
+      if (isNewYear) {
+        setIsNewYearTime(true);
+        return;
+      } else {
+        setIsNewYearTime(false);
+      }
+
       // Next New Year date;
       const newYearDate = new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0);
-
-      if (now >= newYearDate) {
-        clearInterval(interval);
-        setTimeLeft({
-          months: 0,
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
-        });
-        return;
-      }
 
       let months =
         (newYearDate.getFullYear() - now.getFullYear()) * 12 +
@@ -68,16 +77,21 @@ export default function Timer() {
   }, []);
 
   return (
-    <div className="min-h-dvh bg-[url('./assets/background.png')] md:bg-bottom bg-cover bg-right bg-no-repeat text-slate-700 w-full flex items-center py-30 gap-16 flex-col space-y-0.5">
-      <Header />
-
-      <div className="flex items-center justify-evenly w-full flex-wrap space-y-3 sm:space-y-0">
-        <TimeUnit timeUnitLeft={timeLeft.months} timeUnitName="months" />
-        <TimeUnit timeUnitLeft={timeLeft.days} timeUnitName="days" />
-        <TimeUnit timeUnitLeft={timeLeft.hours} timeUnitName="hours" />
-        <TimeUnit timeUnitLeft={timeLeft.minutes} timeUnitName="minutes" />
-        <TimeUnit timeUnitLeft={timeLeft.seconds} timeUnitName="seconds" />
-      </div>
+    <div className="min-h-dvh bg-[url('./assets/background.png')] md:bg-bottom bg-cover bg-right bg-no-repeat text-slate-700 w-full flex items-center  gap-16 flex-col space-y-0.5">
+      {isNewYearTime ? (
+        <NewYearTimeMsg />
+      ) : (
+        <div className="py-30 w-full">
+          <Header />
+          <div className="flex items-center justify-evenly w-full flex-wrap space-y-3 sm:space-y-0 py-20">
+            <TimeUnit timeUnitLeft={timeLeft.months} timeUnitName="months" />
+            <TimeUnit timeUnitLeft={timeLeft.days} timeUnitName="days" />
+            <TimeUnit timeUnitLeft={timeLeft.hours} timeUnitName="hours" />
+            <TimeUnit timeUnitLeft={timeLeft.minutes} timeUnitName="minutes" />
+            <TimeUnit timeUnitLeft={timeLeft.seconds} timeUnitName="seconds" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
