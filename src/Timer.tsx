@@ -2,12 +2,11 @@
 import { useEffect, useState } from "react";
 
 // Components;
-import Header from "./components/Header";
-import TimeUnit from "./components/TimeUnit";
 import NewYearTimeMsg from "./components/NewYearTimeMsg";
+import NewYearTimeUnits from "./components/NewYearTimeUnits";
 
 // Types;
-type TTimeLeft = {
+export type TTimeLeft = {
   months: number;
   days: number;
   hours: number;
@@ -81,16 +80,7 @@ export default function Timer() {
       {isNewYearTime ? (
         <NewYearTimeMsg />
       ) : (
-        <div className="py-30 w-full">
-          <Header />
-          <div className="flex items-center justify-evenly w-full flex-wrap space-y-3 sm:space-y-0 py-20">
-            <TimeUnit timeUnitLeft={timeLeft.months} timeUnitName="months" />
-            <TimeUnit timeUnitLeft={timeLeft.days} timeUnitName="days" />
-            <TimeUnit timeUnitLeft={timeLeft.hours} timeUnitName="hours" />
-            <TimeUnit timeUnitLeft={timeLeft.minutes} timeUnitName="minutes" />
-            <TimeUnit timeUnitLeft={timeLeft.seconds} timeUnitName="seconds" />
-          </div>
-        </div>
+        <NewYearTimeUnits timeLeft={timeLeft} />
       )}
     </div>
   );
