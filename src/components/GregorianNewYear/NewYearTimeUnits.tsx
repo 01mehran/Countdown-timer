@@ -1,5 +1,6 @@
 // Types;
 import type { TTimeLeft } from "../../pages/GregorianNewYear/Timer";
+import NavBar from "../NavBar";
 
 // Componenets;
 import Header from "./Header";
@@ -12,14 +13,17 @@ type NewYearTimeUnitsProps = {
 
 export default function NewYearTimeUnits({ timeLeft }: NewYearTimeUnitsProps) {
   return (
-    <div className="py-30 w-full">
-      <Header />
-      <div className="flex items-center justify-evenly w-full flex-wrap space-y-3 sm:space-y-0 py-20">
-        <TimeUnit timeUnitLeft={timeLeft.months} timeUnitName="months" />
-        <TimeUnit timeUnitLeft={timeLeft.days} timeUnitName="days" />
-        <TimeUnit timeUnitLeft={timeLeft.hours} timeUnitName="hours" />
-        <TimeUnit timeUnitLeft={timeLeft.minutes} timeUnitName="minutes" />
-        <TimeUnit timeUnitLeft={timeLeft.seconds} timeUnitName="seconds" />
+    <div className=" w-full flex-col h-dvh ">
+      <NavBar />
+      <div className="py-22">
+        <Header />
+        <div className="flex items-center justify-evenly w-full flex-wrap space-y-3 sm:space-y-0 py-20">
+          <TimeUnit timeUnitLeft={timeLeft.months} timeUnitName="months" />
+          <TimeUnit timeUnitLeft={timeLeft.days} timeUnitName="days" />
+          <TimeUnit timeUnitLeft={timeLeft.hours} timeUnitName="hours" />
+          <TimeUnit timeUnitLeft={timeLeft.minutes} timeUnitName="minutes" />
+          <TimeUnit timeUnitLeft={timeLeft.seconds} timeUnitName="seconds" />
+        </div>
       </div>
     </div>
   );

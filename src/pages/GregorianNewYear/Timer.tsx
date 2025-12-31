@@ -76,7 +76,7 @@ export default function Timer() {
   }, []);
 
   return (
-    <div className="min-h-dvh bg-[url('./assets/background.png')] md:bg-bottom bg-cover bg-right bg-no-repeat text-slate-700 w-full flex items-center  gap-16 flex-col space-y-0.5">
+    <div className="min-h-dvh bg-[url('./assets/background.png')] md:bg-bottom bg-cover bg-right bg-no-repeat text-slate-700 w-full gap-16  space-y-0.5">
       {isNewYearTime ? (
         <NewYearTimeMsg />
       ) : (
