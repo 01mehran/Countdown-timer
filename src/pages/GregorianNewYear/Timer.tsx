@@ -28,7 +28,7 @@ export default function Timer() {
   useEffect(() => {
     const interval = setInterval(() => {
       // Current time;
-      const now = new Date();
+      const now = new Date(2026, 0, 1, 0, 0, 0);
 
       // Check New Year day;
       const isNewYear =
@@ -78,7 +78,7 @@ export default function Timer() {
   return (
     <div className="min-h-dvh bg-[url('./assets/background.png')] md:bg-bottom bg-cover bg-right bg-no-repeat text-slate-700 w-full gap-16  space-y-0.5">
       {isNewYearTime ? (
-        <NewYearTimeMsg />
+        <NewYearTimeMsg isNewYearTime={isNewYearTime}/>
       ) : (
         <NewYearTimeUnits timeLeft={timeLeft} />
       )}
