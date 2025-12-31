@@ -18,11 +18,23 @@ export default function NewYearTimeUnits({ timeLeft }: NewYearTimeUnitsProps) {
       <div className="py-22">
         <Header />
         <div className="flex items-center justify-evenly w-full flex-wrap space-y-3 sm:space-y-0 py-20">
-          <TimeUnit timeUnitLeft={timeLeft.months} timeUnitName="months" />
-          <TimeUnit timeUnitLeft={timeLeft.days} timeUnitName="days" />
-          <TimeUnit timeUnitLeft={timeLeft.hours} timeUnitName="hours" />
-          <TimeUnit timeUnitLeft={timeLeft.minutes} timeUnitName="minutes" />
-          <TimeUnit timeUnitLeft={timeLeft.seconds} timeUnitName="seconds" />
+          {timeLeft.months > 0 && (
+            <TimeUnit timeUnitLeft={timeLeft.months} timeUnitName="months" />
+          )}
+
+          {timeLeft.days > 0 && (
+            <TimeUnit timeUnitLeft={timeLeft.days} timeUnitName="days" />
+          )}
+          {timeLeft.hours > 0 && (
+            <TimeUnit timeUnitLeft={timeLeft.hours} timeUnitName="hours" />
+          )}
+
+          {timeLeft.minutes > 0 && (
+            <TimeUnit timeUnitLeft={timeLeft.minutes} timeUnitName="minutes" />
+          )}
+          {timeLeft.seconds > 0 && (
+            <TimeUnit timeUnitLeft={timeLeft.seconds} timeUnitName="seconds" />
+          )}
         </div>
       </div>
     </div>
