@@ -28,7 +28,7 @@ export default function Timer() {
   useEffect(() => {
     const interval = setInterval(() => {
       // Current time;
-      const now = new Date(2026, 0, 1, 0, 0, 0);
+      const now = new Date();
 
       // Check New Year day;
       const isNewYear =
