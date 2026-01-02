@@ -60,7 +60,7 @@ export default function Timer() {
         tempDate.setMonth(tempDate.getMonth() - 1);
       }
 
-      // Milliseconds remaining until next New Yearک
+      // Milliseconds remaining until next New Year;
       const diff = newYearDate.getTime() - tempDate.getTime();
 
       const seconds = Math.floor(diff / 1000) % 60;
@@ -78,7 +78,7 @@ export default function Timer() {
   return (
     <div className="min-h-dvh bg-[url('./assets/background.png')] md:bg-bottom bg-cover bg-right bg-no-repeat text-slate-700 w-full gap-16  space-y-0.5">
       {isNewYearTime ? (
-        <NewYearTimeMsg isNewYearTime={isNewYearTime}/>
+        <NewYearTimeMsg isNewYearTime={isNewYearTime} />
       ) : (
         <NewYearTimeUnits timeLeft={timeLeft} />
       )}
