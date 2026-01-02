@@ -29,12 +29,9 @@ export default function NewYearTimeUnits({ timeLeft }: NewYearTimeUnitsProps) {
             <TimeUnit timeUnitLeft={timeLeft.hours} timeUnitName="hours" />
           )}
 
-          {timeLeft.minutes > 0 && (
-            <TimeUnit timeUnitLeft={timeLeft.minutes} timeUnitName="minutes" />
-          )}
-          {timeLeft.seconds > 0 && (
-            <TimeUnit timeUnitLeft={timeLeft.seconds} timeUnitName="seconds" />
-          )}
+          <TimeUnit timeUnitLeft={timeLeft.minutes} timeUnitName="minutes" />
+
+          <TimeUnit timeUnitLeft={timeLeft.seconds} timeUnitName="seconds" />
         </div>
       </div>
     </div>
