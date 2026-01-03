@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import menu_icon from "../assets/menuicon.svg";
+import menu_icon from "../assets/images/menuicon.svg";
 import { useState } from "react";
 
 function NavBar() {

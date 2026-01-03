@@ -2,8 +2,8 @@
 
 ## Demo
 
-![nowruz-demo](/src/assets/nowruz-demo.png)
-![gregorain-demo](/src/assets/gregorain-demo.png)
+![nowruz-demo](/src/assets/images/nowruz-demo.png)
+![gregorain-demo](/src/assets/images/gregorain-demo.png)
 
 ## [Online demo](https://01mehran.github.io/Countdown-timer/)
 
