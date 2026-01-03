@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 // Components;
 import NowruzTimeUnit from "../../components/Nowruz/NowruzTimeUnit";
+import NowruzTimeMsg from "../../components/Nowruz/NowruzTimeMsg";
 
 // Types;
 export type TTimeLeft = {
@@ -19,21 +20,28 @@ export default function NowruzTimer() {
     minutes: 0,
     seconds: 0,
   });
+  const [isNowruzTime, setIsNowruzTime] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       // Current time;
       const now = new Date();
 
-      // Current gregorian year;
-      const currentYear = now.getFullYear();
+      const startOfNowruz = new Date(now.getFullYear(), 2, 20, 0, 0, 0);
+      const endOfNowruz = new Date(now.getFullYear(), 2, 21, 0, 0, 0);
+
+      if (now >= startOfNowruz && now < endOfNowruz) {
+        setIsNowruzTime(true);
+        return;
+      }
+      setIsNowruzTime(false);
 
       // Next Nowruz;
-      let nextNowruz = new Date(currentYear, 2, 20, 0, 0, 0);
+      let nextNowruz = startOfNowruz;
 
       // If we are in Nowruz time or pass it, get nex Nowruz;
-      if (now >= nextNowruz) {
-        nextNowruz = new Date(currentYear + 1, 2, 20, 0, 0, 0);
+      if (now >= endOfNowruz) {
+        nextNowruz = new Date(now.getFullYear() + 1, 2, 20, 0, 0, 0);
       }
 
       // Milliseconds remaining until next New Year
@@ -52,7 +60,11 @@ export default function NowruzTimer() {
 
   return (
     <div className="min-h-dvh bg-[url('./assets/background.png')] md:bg-bottom bg-cover bg-right bg-no-repeat text-slate-700 w-full flex items-center  gap-16 flex-col space-y-0.5">
-      <NowruzTimeUnit timeLeft={timeLeft} />
+      {isNowruzTime ? (
+        <NowruzTimeMsg isNowruzTime={isNowruzTime} />
+      ) : (
+        <NowruzTimeUnit timeLeft={timeLeft} />
+      )}
     </div>
   );
 }
