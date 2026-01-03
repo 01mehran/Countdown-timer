@@ -1,5 +1,12 @@
 # Countdown Timer App 🕐
 
+## Demo
+
+![nowruz-demo](/src/assets/nowruz-demo.png)
+![gregorain-demo](/src/assets/gregorain-demo.png)
+
+## [Online demo](https://01mehran.github.io/Countdown-timer/)
+
 ## 📱 Overview
 
 > A versatile countdown timer application that displays time remaining for both Gregorian (Miladi) and Persian (Shamsi) calendar systems. The app features seamless navigation through shareable links, allowing users to easily switch between different countdown views
@@ -44,8 +51,8 @@ yarn start
 - Styling: Tailwind css
 - Build Tool: Vite
 
-
 ## 🤝 Contributing
+
 1. Fork the repository
 
 2. Create a feature branch (git checkout -b feature/AmazingFeature)
@@ -55,3 +62,5 @@ yarn start
 4. Push to branch (git push origin feature/AmazingFeature)
 
 5. Open a Pull Request
+
+### Made with ❤️ by mehran

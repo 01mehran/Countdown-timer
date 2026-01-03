@@ -26,7 +26,7 @@ export default function NowruzTimer() {
     const interval = setInterval(() => {
       // Current time;
       const now = new Date();
-
+      // 2026, 2, 20, 12, 0, 0
       const startOfNowruz = new Date(now.getFullYear(), 2, 20, 0, 0, 0);
       const endOfNowruz = new Date(now.getFullYear(), 2, 21, 0, 0, 0);
 
