@@ -13,6 +13,21 @@ function NavBar() {
     setIsMenuOpen(false);
   };
 
+  const routes = [
+    {
+      title: "Gregorian New Year ",
+      path: "/",
+    },
+    {
+      title: "Persian New Year",
+      path: "/Nowruz",
+    },
+    {
+      title: "Custom Countdown",
+      path: "/customCountdown",
+    },
+  ];
+
   return (
     <nav className=" w-full h-16 flex items-center justify-between sm:px-14 px-4 shadow   ">
       <p className=" font-medium text-sm text-nowrap">Countdonw_Timer</p>
@@ -31,12 +46,11 @@ function NavBar() {
             X
           </span>
         )}
-        <li className="font-medium text-sm">
-          <Link to="/">Gregorian New Year </Link>
-        </li>
-        <li className="font-medium text-sm">
-          <Link to="/Nowruz">Persian New Year (Nowruz)</Link>
-        </li>
+        {routes.map((route) => (
+          <li className="font-medium text-sm">
+            <Link to={route.path}>{route.title}</Link>
+          </li>
+        ))}
       </ul>
       <div
         className="w-6 h-6 cursor-pointer sm:hidden block"
