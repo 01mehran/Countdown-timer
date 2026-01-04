@@ -19,14 +19,14 @@ function NavBar() {
       <ul
         className={`sm:flex items-center space-x-6 ${
           isMenuOpen
-            ? " w-full gap-2 bg-linear-to-r bg-blue-600 via-blue-500 to-blue-400 fixed top-0 left-0 flex text-white flex-col py-4 "
+            ? " w-full gap-2 bg-linear-to-t bg-slate-900/80 to-black/60 fixed top-0 left-0 flex text-white flex-col py-4 rounded-b-xl"
             : "hidden"
         } `}
       >
         {isMenuOpen && (
           <span
             onClick={handleCloseMenu}
-            className="w-6  h-6 absolute right-0 text-xl cursor-pointer "
+            className="absolute font-semibold hover:text-red-500 right-0 text-xl cursor-pointer "
           >
             X
           </span>
