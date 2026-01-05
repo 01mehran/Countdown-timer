@@ -19,7 +19,7 @@ function NavBar() {
       path: "/",
     },
     {
-      title: "Persian New Year",
+      title: "Persian New Year (Nowruz)",
       path: "/Nowruz",
     },
     {
@@ -32,7 +32,7 @@ function NavBar() {
     <nav className=" relative w-full h-16 flex items-center justify-between sm:px-14 px-4 shadow   ">
       <p className=" font-medium text-sm text-nowrap">Countdonw_Timer</p>
       <ul
-        className={`sm:flex items-center  ${
+        className={`md:flex items-center  ${
           isMenuOpen
             ? " w-full gap-2 bg-linear-to-t bg-slate-900/80 to-black/60 fixed top-0 left-0 flex text-white flex-col py-4 rounded-b-xl items-center"
             : "hidden gap-6"
@@ -53,7 +53,7 @@ function NavBar() {
         ))}
       </ul>
       <div
-        className="w-6 h-6 cursor-pointer sm:hidden block"
+        className="w-6 h-6 cursor-pointer md:hidden block"
         onClick={handleToggleMenu}
       >
         <img className="h-full w-full" src={menu_icon} alt="menu icon" />
