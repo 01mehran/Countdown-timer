@@ -14,25 +14,43 @@ export default function CustomCountDown() {
         <section className="flex justify-center gap-4 mt-14 ">
           {/* Hours; */}
           <article className="w-[25%] py-2 rounded-md px-2  shadow-[1px_1px_5px_rgba(0,0,0,.6)]">
-            <select className=" w-full h-full border-0 outline-0 text-lg">
+            <select
+              className=" w-full h-full border-0 outline-0 text-lg"
+              defaultValue=""
+            >
+              <option value="" disabled hidden>
+                hours
+              </option>
               {Array.from({ length: 24 }, (_, i) => (
-                <option value={i}>{i + 1}</option>
+                <option value={i + 1}>{i + 1}</option>
               ))}
             </select>
           </article>
           {/* Minutes */}
           <article className="w-[25%] py-2 rounded-md px-2  shadow-[1px_1px_5px_rgba(0,0,0,.6)]">
-            <select className="w-full h-full  border-0 outline-0 text-lg">
-              {Array.from({ length: 59 }, (_, i) => (
-                <option value={i}>{i + 1}</option>
+            <select
+              className="w-full h-full  border-0 outline-0 text-lg"
+              defaultValue=""
+            >
+              <option value="" disabled hidden>
+                minutes
+              </option>
+              {Array.from({ length: 60 }, (_, i) => (
+                <option value={i + 1}>{i + 1}</option>
               ))}
             </select>
           </article>
           {/* Seconds */}
           <article className="w-[25%] py-2 rounded-md px-2 shadow-[1px_1px_5px_rgba(0,0,0,.6)]">
-            <select className=" w-full h-full border-0 outline-0 text-lg ">
-              {Array.from({ length: 59 }, (_, i) => (
-                <option value={i}>{i + 1}</option>
+            <select
+              className=" w-full h-full border-0 outline-0 text-lg"
+              defaultValue=""
+            >
+              <option value="" disabled hidden>
+                seconds
+              </option>
+              {Array.from({ length: 60 }, (_, i) => (
+                <option value={i + 1}>{i + 1}</option>
               ))}
             </select>
           </article>
