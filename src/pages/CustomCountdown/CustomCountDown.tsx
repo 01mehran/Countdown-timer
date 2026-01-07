@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import NavBar from "../../components/NavBar";
+import SelectOptions from "../../components/CustomCountdown/SelectOptions";
 
 export default function CustomCountDown() {
   const [hours, setHours] = useState(0);
@@ -50,56 +51,21 @@ export default function CustomCountDown() {
         {/* Select time */}
         <section className="flex justify-center gap-4 mt-14 ">
           {/* Hours; */}
-          <article className="w-[25%] py-2 rounded-md px-2  shadow-[1px_1px_5px_rgba(0,0,0,.6)]">
-            <select
-              className=" w-full h-full border-0 outline-0 text-lg"
-              defaultValue=""
-              onChange={(e) => setHours(+e.target.value)}
-            >
-              <option value="" disabled hidden>
-                hours
-              </option>
-              {Array.from({ length: 24 }, (_, i) => (
-                <option key={i} value={i + 1}>
-                  {i + 1}
-                </option>
-              ))}
-            </select>
-          </article>
+          <SelectOptions onChange={setHours} optionTitle="hours" length={24} />
+
           {/* Minutes */}
-          <article className="w-[25%] py-2 rounded-md px-2  shadow-[1px_1px_5px_rgba(0,0,0,.6)]">
-            <select
-              className="w-full h-full  border-0 outline-0 text-lg"
-              defaultValue=""
-              onChange={(e) => setMinutes(+e.target.value)}
-            >
-              <option value="" disabled hidden>
-                minutes
-              </option>
-              {Array.from({ length: 60 }, (_, i) => (
-                <option key={i} value={i + 1}>
-                  {i + 1}
-                </option>
-              ))}
-            </select>
-          </article>
+          <SelectOptions
+            onChange={setMinutes}
+            optionTitle="minutes"
+            length={60}
+          />
+
           {/* Seconds */}
-          <article className="w-[25%] py-2 rounded-md px-2 shadow-[1px_1px_5px_rgba(0,0,0,.6)]">
-            <select
-              className=" w-full h-full border-0 outline-0 text-lg"
-              defaultValue=""
-              onChange={(e) => setSeconds(+e.target.value)}
-            >
-              <option value="" disabled hidden>
-                seconds
-              </option>
-              {Array.from({ length: 60 }, (_, i) => (
-                <option key={i} value={i + 1}>
-                  {i + 1}
-                </option>
-              ))}
-            </select>
-          </article>
+          <SelectOptions
+            onChange={setSeconds}
+            optionTitle="seconds"
+            length={60}
+          />
         </section>
 
         {/* Time; */}
