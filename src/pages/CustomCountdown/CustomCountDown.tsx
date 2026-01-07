@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import NavBar from "../../components/NavBar";
 import SelectOptions from "../../components/CustomCountdown/SelectOptions";
 import DisplayTime from "../../components/CustomCountdown/DisplayTime";
+import ActionButtons from "../../components/CustomCountdown/ActionButtons";
 
 export default function CustomCountDown() {
   const [hours, setHours] = useState(0);
@@ -77,17 +78,7 @@ export default function CustomCountDown() {
         </section>
 
         {/* Action buttons */}
-        <section className="mt-12 gap-2 mx-auto  flex items-center flex-wrap justify-center">
-          <button
-            onClick={handleStartTimer}
-            className="w-38 py-1 cursor-pointer shadow-[1px_1px_5px_rgba(0,0,0,.6)] font-semibold rounded-full "
-          >
-            Start
-          </button>
-          <button className="w-38 py-1 cursor-pointer shadow-[1px_1px_5px_rgba(0,0,0,.6)] font-semibold rounded-full ">
-            Stop
-          </button>
-        </section>
+        <ActionButtons onHandleStartTimer={handleStartTimer} />
       </div>
     </div>
   );
