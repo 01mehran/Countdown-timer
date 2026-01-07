@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import NavBar from "../../components/NavBar";
 import SelectOptions from "../../components/CustomCountdown/SelectOptions";
+import DisplayTime from "../../components/CustomCountdown/DisplayTime";
 
 export default function CustomCountDown() {
   const [hours, setHours] = useState(0);
@@ -70,20 +71,9 @@ export default function CustomCountDown() {
 
         {/* Time; */}
         <section className="flex items-center justify-center text-3xl max-w-4xl w-full mx-auto mt-20">
-          <article className="flex flex-col w-full">
-            <time>{displayHours.toString().padStart(2, "0")}</time>
-            <span className="text-sm font-medium">hours</span>
-          </article>
-          :
-          <article className="flex flex-col w-full">
-            <time>{displayMinutes.toString().padStart(2, "0")}</time>
-            <span className="text-sm font-medium">minutes</span>
-          </article>
-          :
-          <article className="flex flex-col w-full">
-            <time>{dispaySeconds.toString().padStart(2, "0")}</time>
-            <span className="text-sm font-medium">seconds</span>
-          </article>
+          <DisplayTime selectedTime={displayHours} timeTitle="hours" />
+          <DisplayTime selectedTime={displayMinutes} timeTitle="minutes" />
+          <DisplayTime selectedTime={dispaySeconds} timeTitle="seconds" />
         </section>
 
         {/* Action buttons */}
