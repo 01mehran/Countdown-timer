@@ -10,7 +10,7 @@ export default function CustomCountDown() {
   const [seconds, setSeconds] = useState(0);
 
   const [totalSeconds, setTotalSeconds] = useState(0);
-  const [isRuninng, setIsRunning] = useState(false);
+  const [isRunning, setIsRunning] = useState(false);
 
   const intervalRef = useRef<number | null>(null);
 
@@ -21,6 +21,10 @@ export default function CustomCountDown() {
 
     setTotalSeconds(total);
     setIsRunning(true);
+
+    setHours(0);
+    setMinutes(0);
+    setSeconds(0);
   };
 
   const handleStopTimer = () => {
@@ -34,14 +38,14 @@ export default function CustomCountDown() {
   };
 
   useEffect(() => {
-    if (!isRuninng || totalSeconds <= 0) return;
+    if (!isRunning || totalSeconds <= 0) return;
 
     const interval = setInterval(() => {
       setTotalSeconds((prev) => prev - 1);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isRuninng, totalSeconds]);
+  }, [isRunning, totalSeconds]);
 
   useEffect(() => {
     if (totalSeconds === 0) {
@@ -50,7 +54,7 @@ export default function CustomCountDown() {
   }, [totalSeconds]);
 
   useEffect(() => {
-    if (!isRuninng) return;
+    if (!isRunning) return;
 
     intervalRef.current = setInterval(() => {
       setTotalSeconds((prev) => {
@@ -70,7 +74,7 @@ export default function CustomCountDown() {
         intervalRef.current = null;
       }
     };
-  }, [isRuninng]);
+  }, [isRunning]);
 
   const displayHours = Math.floor(totalSeconds / 3600);
   const displayMinutes = Math.floor((totalSeconds % 3600) / 60);
@@ -88,13 +92,21 @@ export default function CustomCountDown() {
         {/* Select time */}
         <section className="flex justify-center gap-4 mt-14 ">
           {/* Hours; */}
-          <SelectOptions onChange={setHours} optionTitle="hours" length={24} />
+          <SelectOptions
+            onChange={setHours}
+            optionTitle="hours"
+            length={24}
+            value={hours}
+            isRunning={isRunning}
+          />
 
           {/* Minutes */}
           <SelectOptions
             onChange={setMinutes}
             optionTitle="minutes"
             length={60}
+            value={minutes}
+            isRunning={isRunning}
           />
 
           {/* Seconds */}
@@ -102,6 +114,8 @@ export default function CustomCountDown() {
             onChange={setSeconds}
             optionTitle="seconds"
             length={60}
+            value={seconds}
+            isRunning={isRunning}
           />
         </section>
 
@@ -116,6 +130,7 @@ export default function CustomCountDown() {
         <ActionButtons
           onHandleStartTimer={handleStartTimer}
           onHandleStopTimer={handleStopTimer}
+          isRunning={isRunning}
         />
       </div>
     </div>
