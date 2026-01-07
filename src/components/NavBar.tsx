@@ -47,7 +47,7 @@ function NavBar() {
           </span>
         )}
         {routes.map((route) => (
-          <li className="font-medium text-sm">
+          <li className="font-medium text-sm" key={route.title}>
             <Link to={route.path}>{route.title}</Link>
           </li>
         ))}
