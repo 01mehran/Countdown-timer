@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import NavBar from "../../components/NavBar";
 import SelectOptions from "../../components/CustomCountdown/SelectOptions";
 import DisplayTime from "../../components/CustomCountdown/DisplayTime";
@@ -12,6 +12,8 @@ export default function CustomCountDown() {
   const [totalSeconds, setTotalSeconds] = useState(0);
   const [isRuninng, setIsRunning] = useState(false);
 
+  const intervalRef = useRef<number | null>(null);
+
   const handleStartTimer = () => {
     const total = Number(hours) * 3600 + Number(minutes) * 60 + Number(seconds);
 
@@ -19,6 +21,16 @@ export default function CustomCountDown() {
 
     setTotalSeconds(total);
     setIsRunning(true);
+  };
+
+  const handleStopTimer = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+
+    setIsRunning(false);
+    setTotalSeconds(0);
   };
 
   useEffect(() => {
@@ -36,6 +48,29 @@ export default function CustomCountDown() {
       setIsRunning(false);
     }
   }, [totalSeconds]);
+
+  useEffect(() => {
+    if (!isRuninng) return;
+
+    intervalRef.current = setInterval(() => {
+      setTotalSeconds((prev) => {
+        if (prev <= 1) {
+          clearInterval(intervalRef.current!);
+          intervalRef.current = null;
+          setIsRunning(false);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, [isRuninng]);
 
   const displayHours = Math.floor(totalSeconds / 3600);
   const displayMinutes = Math.floor((totalSeconds % 3600) / 60);
@@ -72,13 +107,16 @@ export default function CustomCountDown() {
 
         {/* Time; */}
         <section className="flex items-center justify-center text-3xl max-w-4xl w-full mx-auto mt-20">
-          <DisplayTime selectedTime={displayHours} timeTitle="hours" />
-          <DisplayTime selectedTime={displayMinutes} timeTitle="minutes" />
+          <DisplayTime selectedTime={displayHours} timeTitle="hours" /> :
+          <DisplayTime selectedTime={displayMinutes} timeTitle="minutes" /> :
           <DisplayTime selectedTime={dispaySeconds} timeTitle="seconds" />
         </section>
 
         {/* Action buttons */}
-        <ActionButtons onHandleStartTimer={handleStartTimer} />
+        <ActionButtons
+          onHandleStartTimer={handleStartTimer}
+          onHandleStopTimer={handleStopTimer}
+        />
       </div>
     </div>
   );
