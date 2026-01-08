@@ -94,7 +94,6 @@ export default function CustomCountDown() {
           {/* Hours; */}
           <SelectOptions
             onChange={setHours}
-            optionTitle="hours"
             length={24}
             value={hours}
             isRunning={isRunning}
@@ -103,7 +102,6 @@ export default function CustomCountDown() {
           {/* Minutes */}
           <SelectOptions
             onChange={setMinutes}
-            optionTitle="minutes"
             length={60}
             value={minutes}
             isRunning={isRunning}
@@ -112,7 +110,6 @@ export default function CustomCountDown() {
           {/* Seconds */}
           <SelectOptions
             onChange={setSeconds}
-            optionTitle="seconds"
             length={60}
             value={seconds}
             isRunning={isRunning}

@@ -1,6 +1,5 @@
 type SelectOptionsProps = {
   onChange: (value: number) => void;
-  optionTitle: string;
   length: number;
   value: number;
   isRunning: boolean;
@@ -8,7 +7,6 @@ type SelectOptionsProps = {
 
 export default function SelectOptions({
   onChange,
-  optionTitle,
   length,
   value,
   isRunning,
@@ -22,10 +20,6 @@ export default function SelectOptions({
         onChange={(e) => onChange(+e.target.value)}
         value={value}
       >
-        <option value="" disabled hidden>
-          {optionTitle}
-        </option>
-
         {Array.from({ length: length }, (_, i) => (
           <option key={i} value={i}>
             {i}
