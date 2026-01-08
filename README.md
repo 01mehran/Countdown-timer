@@ -4,12 +4,13 @@
 
 ![nowruz-demo](/src/assets/images/nowruz-demo.png)
 ![gregorain-demo](/src/assets/images/gregorain-demo.png)
+![countdown](/src/assets/images/customCountdown.png)
 
 ## [Online demo](https://01mehran.github.io/Countdown-timer/)
 
 ## 📱 Overview
 
-> A versatile countdown timer application that displays time remaining for both Gregorian (Miladi) and Persian (Shamsi) calendar systems. The app features seamless navigation through shareable links, allowing users to easily switch between different countdown views
+> A versatile countdown timer application that displays time remaining for both Gregorian (Miladi) and Persian (Shamsi) calendar systems. in addition you can create you custom countdown The app features seamless navigation through shareable links, allowing users to easily switch between different countdown views
 
 ## ✨ Features
 
@@ -18,6 +19,8 @@
 - Shareable Links: Generate and share direct links to specific countdowns
 
 - Responsive Design: Works seamlessly across all devices
+
+- Custom Countdown: You can create your countdown
 
 ## 🛠️ Installation
 
