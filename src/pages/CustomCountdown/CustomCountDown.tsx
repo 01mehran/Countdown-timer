@@ -1,8 +1,11 @@
+// Hooks;
 import { useEffect, useRef, useState } from "react";
+
+// Components
 import NavBar from "../../components/NavBar";
-import SelectOptions from "../../components/CustomCountdown/SelectOptions";
 import DisplayTime from "../../components/CustomCountdown/DisplayTime";
 import ActionButtons from "../../components/CustomCountdown/ActionButtons";
+import SelectOptionsBox from "../../components/CustomCountdown/SelectOptionsBox";
 
 export default function CustomCountDown() {
   const [hours, setHours] = useState(0);
@@ -89,32 +92,16 @@ export default function CustomCountDown() {
           Create your countdown <span>&darr;</span>
         </header>
 
-        {/* Select time */}
-        <section className="flex justify-center gap-4 mt-14 ">
-          {/* Hours; */}
-          <SelectOptions
-            onChange={setHours}
-            length={24}
-            value={hours}
-            isRunning={isRunning}
-          />
-
-          {/* Minutes */}
-          <SelectOptions
-            onChange={setMinutes}
-            length={60}
-            value={minutes}
-            isRunning={isRunning}
-          />
-
-          {/* Seconds */}
-          <SelectOptions
-            onChange={setSeconds}
-            length={60}
-            value={seconds}
-            isRunning={isRunning}
-          />
-        </section>
+        {/* Select time box */}
+        <SelectOptionsBox
+          isRunning={isRunning}
+          hours={hours}
+          minutes={minutes}
+          seconds={seconds}
+          setHours={setHours}
+          setMinutes={setMinutes}
+          setSeconds={setSeconds}
+        />
 
         {/* Time; */}
         <section className="flex items-center justify-center text-3xl max-w-4xl w-full mx-auto mt-20">
