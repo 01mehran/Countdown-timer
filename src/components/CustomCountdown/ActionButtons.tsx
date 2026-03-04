@@ -1,8 +1,5 @@
-type ActionButtonsProps = {
-  onHandleStartTimer: () => void;
-  onHandleStopTimer: () => void;
-  isRunning: boolean;
-};
+// Types;
+import type { ActionButtonsProps } from "../../types/CustomCountdownTypes";
 
 export default function ActionButtons({
   onHandleStartTimer,

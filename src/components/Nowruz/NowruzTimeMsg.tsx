@@ -40,7 +40,7 @@ export default function NewYearTimeMsg({ isNowruzTime }: NewYearTimeMsgProps) {
         🎉 سال نووو مبارک! 🎉
       </h1>
       <p className="italic font-bold text-yellow-400">
-        ✨ سال نو هدف های  نو ✨
+        ✨ سال نو هدف های نو ✨
       </p>
     </div>
   );

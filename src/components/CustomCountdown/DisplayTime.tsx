@@ -1,7 +1,5 @@
-type DisplayTimeProps = {
-  selectedTime: number;
-  timeTitle: string;
-};
+// Types;
+import type { DisplayTimeProps } from "../../types/CustomCountdownTypes";
 
 export default function DisplayTime({
   selectedTime,

@@ -1,14 +1,8 @@
+// Compomemts;
 import SelectOptions from "./SelectOptions";
 
-type SelectOptionsBoxProps = {
-  isRunning: boolean;
-  hours: number;
-  minutes: number;
-  seconds: number;
-  setHours: (value: number) => void;
-  setMinutes: (value: number) => void;
-  setSeconds: (value: number) => void;
-};
+// Types;
+import type { SelectOptionsBoxProps } from "../../types/CustomCountdownTypes";
 
 export default function SelectOptionsBox({
   isRunning,

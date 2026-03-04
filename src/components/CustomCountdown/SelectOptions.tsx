@@ -1,9 +1,5 @@
-type SelectOptionsProps = {
-  onChange: (value: number) => void;
-  length: number;
-  value: number;
-  isRunning: boolean;
-};
+// Types;
+import type { SelectOptionsProps } from "../../types/CustomCountdownTypes";
 
 export default function SelectOptions({
   onChange,
