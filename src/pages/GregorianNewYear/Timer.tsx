@@ -6,13 +6,7 @@ import NewYearTimeMsg from "../../components/GregorianNewYear/NewYearTimeMsg";
 import NewYearTimeUnits from "../../components/GregorianNewYear/NewYearTimeUnits";
 
 // Types;
-export type TTimeLeft = {
-  months: number;
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-};
+import type { TTimeLeft } from "../../types/GregorianNewYearTypes";
 
 export default function Timer() {
   // states;
@@ -23,6 +17,7 @@ export default function Timer() {
     minutes: 0,
     seconds: 0,
   });
+
   const [isNewYearTime, setIsNewYearTime] = useState(false);
 
   useEffect(() => {

@@ -1,7 +1,5 @@
-type TTimeUnitProps = {
-  timeUnitLeft: number;
-  timeUnitName: string;
-};
+// Types;
+import type { TTimeUnitProps } from "../../types/GregorianNewYearTypes";
 
 export default function TimeUnit({
   timeUnitLeft,

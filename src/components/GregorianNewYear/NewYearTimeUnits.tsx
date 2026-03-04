@@ -1,15 +1,10 @@
-// Types;
-import type { TTimeLeft } from "../../pages/GregorianNewYear/Timer";
-import NavBar from "../NavBar";
-
 // Componenets;
+import NavBar from "../NavBar";
 import Header from "./Header";
 import TimeUnit from "./TimeUnit";
 
 // Types;
-type NewYearTimeUnitsProps = {
-  timeLeft: TTimeLeft;
-};
+import type { NewYearTimeUnitsProps } from "../../types/GregorianNewYearTypes";
 
 export default function NewYearTimeUnits({ timeLeft }: NewYearTimeUnitsProps) {
   return (
