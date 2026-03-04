@@ -1,9 +1,10 @@
-import confetti from "canvas-confetti";
+// Hooks;
 import { useEffect } from "react";
 
-type NewYearTimeMsgProps = {
-  isNowruzTime: boolean;
-};
+import confetti from "canvas-confetti";
+
+// Types;
+import type { NewYearTimeMsgProps } from "../../types/NowruzTypes";
 
 export default function NewYearTimeMsg({ isNowruzTime }: NewYearTimeMsgProps) {
   function fireConfetti() {

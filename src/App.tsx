@@ -1,4 +1,7 @@
+// Libraries;
 import { Route, Routes } from "react-router-dom";
+
+// Pages;
 import Timer from "./pages/GregorianNewYear/Timer";
 import NowruzTimer from "./pages/Nowruz/Timer";
 import CustomCountDown from "./pages/CustomCountdown/CustomCountDown";

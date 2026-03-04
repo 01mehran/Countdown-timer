@@ -1,11 +1,10 @@
+// Components;
 import Header from "../Nowruz/Header";
 import NavBar from "../NavBar";
 import TimeUnit from "../Nowruz/TimeUnit";
-import type { TTimeLeft } from "../../pages/Nowruz/Timer";
 
-type TNowruzTimeUnit = {
-  timeLeft: TTimeLeft;
-};
+// Types;
+import type { TNowruzTimeUnit } from "../../types/NowruzTypes";
 
 export default function NowruzTimeUnit({ timeLeft }: TNowruzTimeUnit) {
   return (

@@ -6,12 +6,7 @@ import NowruzTimeUnit from "../../components/Nowruz/NowruzTimeUnit";
 import NowruzTimeMsg from "../../components/Nowruz/NowruzTimeMsg";
 
 // Types;
-export type TTimeLeft = {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-};
+import type { TTimeLeft } from "../../types/NowruzTypes";
 
 export default function NowruzTimer() {
   const [timeLeft, setTimeLeft] = useState<TTimeLeft>({
