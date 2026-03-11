@@ -2,7 +2,7 @@
 import SelectOptions from "./SelectOptions";
 
 // Types;
-import type { SelectOptionsBoxProps } from "../../types/CustomCountdownTypes";
+import type { SelectOptionsBoxProps } from "@/types/CustomCountdownTypes";
 
 export default function SelectOptionsBox({
   isRunning,

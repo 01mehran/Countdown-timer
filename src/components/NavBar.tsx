@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 // Icons;
-import menu_icon from "../assets/images/menuicon.svg";
+import menu_icon from "@/assets/images/menuicon.svg";
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

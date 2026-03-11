@@ -1,5 +1,5 @@
 // Types;
-import type { ActionButtonsProps } from "../../types/CustomCountdownTypes";
+import type { ActionButtonsProps } from "@/types/CustomCountdownTypes";
 
 export default function ActionButtons({
   onHandleStartTimer,

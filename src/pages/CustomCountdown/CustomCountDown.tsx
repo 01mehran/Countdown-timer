@@ -2,10 +2,10 @@
 import { useEffect, useRef, useState } from "react";
 
 // Components
-import NavBar from "../../components/NavBar";
-import DisplayTime from "../../components/CustomCountdown/DisplayTime";
-import ActionButtons from "../../components/CustomCountdown/ActionButtons";
-import SelectOptionsBox from "../../components/CustomCountdown/SelectOptionsBox";
+import NavBar from "@compos/NavBar";
+import DisplayTime from "@compos/CustomCountdown/DisplayTime";
+import ActionButtons from "@compos/CustomCountdown/ActionButtons";
+import SelectOptionsBox from "@compos/CustomCountdown/SelectOptionsBox";
 
 export default function CustomCountDown() {
   const [hours, setHours] = useState(0);

@@ -1,5 +1,5 @@
 // Types;
-import type { SelectOptionsProps } from "../../types/CustomCountdownTypes";
+import type { SelectOptionsProps } from "@/types/CustomCountdownTypes";
 
 export default function SelectOptions({
   onChange,
