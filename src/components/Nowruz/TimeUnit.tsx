@@ -1,5 +1,5 @@
 // Types;
-import type { TTimeUnitProps } from "../../types/NowruzTypes";
+import type { TTimeUnitProps } from "@/types/NowruzTypes";
 
 export default function TimeUnit({
   timeUnitLeft,

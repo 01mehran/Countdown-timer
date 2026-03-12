@@ -1,5 +1,5 @@
 // Types;
-import type { TTimeUnitProps } from "../../types/GregorianNewYearTypes";
+import type { TTimeUnitProps } from "@/types/GregorianNewYearTypes";
 
 export default function TimeUnit({
   timeUnitLeft,

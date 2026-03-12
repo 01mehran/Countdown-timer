@@ -4,7 +4,7 @@ import Header from "./Header";
 import TimeUnit from "./TimeUnit";
 
 // Types;
-import type { NewYearTimeUnitsProps } from "../../types/GregorianNewYearTypes";
+import type { NewYearTimeUnitsProps } from "@/types/GregorianNewYearTypes";
 
 export default function NewYearTimeUnits({ timeLeft }: NewYearTimeUnitsProps) {
   return (

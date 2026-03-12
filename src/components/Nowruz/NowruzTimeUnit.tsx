@@ -4,7 +4,7 @@ import NavBar from "../NavBar";
 import TimeUnit from "../Nowruz/TimeUnit";
 
 // Types;
-import type { TNowruzTimeUnit } from "../../types/NowruzTypes";
+import type { TNowruzTimeUnit } from "@/types/NowruzTypes";
 
 export default function NowruzTimeUnit({ timeLeft }: TNowruzTimeUnit) {
   return (
