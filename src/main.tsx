@@ -9,5 +9,5 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter basename="/Countdown-timer/">
       <App />
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );

@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 
 // Components;
-import NowruzTimeUnit from "../../components/Nowruz/NowruzTimeUnit";
-import NowruzTimeMsg from "../../components/Nowruz/NowruzTimeMsg";
+import NowruzTimeUnit from "@compos/Nowruz/NowruzTimeUnit";
+import NowruzTimeMsg from "@compos/Nowruz/NowruzTimeMsg";
 
 // Types;
-import type { TTimeLeft } from "../../types/NowruzTypes";
+import type { TTimeLeft } from "@/types/NowruzTypes";
 
 export default function NowruzTimer() {
   const [timeLeft, setTimeLeft] = useState<TTimeLeft>({

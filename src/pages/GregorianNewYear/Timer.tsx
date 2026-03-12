@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 
 // Components;
-import NewYearTimeMsg from "../../components/GregorianNewYear/NewYearTimeMsg";
-import NewYearTimeUnits from "../../components/GregorianNewYear/NewYearTimeUnits";
+import NewYearTimeMsg from "@compos/GregorianNewYear/NewYearTimeMsg";
+import NewYearTimeUnits from "@compos/GregorianNewYear/NewYearTimeUnits";
 
 // Types;
-import type { TTimeLeft } from "../../types/GregorianNewYearTypes";
+import type { TTimeLeft } from "@/types/GregorianNewYearTypes";
 
 export default function Timer() {
   // states;
