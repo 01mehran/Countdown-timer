@@ -1,5 +1,5 @@
 // Librariesl
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 //Hooks;
 import { useState } from "react";
@@ -9,6 +9,7 @@ import menu_icon from "@/assets/images/menuicon.svg";
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const handleToggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -53,7 +54,7 @@ function NavBar() {
         )}
         {routes.map((route) => (
           <li
-            className="hover-effect hover:after:w-full font-medium text-sm "
+            className={`hover-effect hover:after:w-full font-medium text-sm ${location.pathname === route.path ? "font-extrabold italic text-amber-600" : ""}`}
             key={route.title}
           >
             <Link to={route.path}>{route.title}</Link>
