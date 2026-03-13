@@ -12,6 +12,6 @@
   }
 
   .hover-effect {
-    @apply after:content-[""] after:w-0 after:h-0.5 after:bg-black/50 after:block after:mx-auto after:transition-all after:duration-400 after:rounded-lg;
+    @apply after:content-[""] after:w-0 after:h-0.5 after:bg-white after:md:bg-black/50 after:block after:mx-auto after:transition-all after:duration-400 after:rounded-lg;
   }
 }
